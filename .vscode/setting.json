@@ -1,5 +1,12 @@
 {
   /*
+  Git
+  */
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  /*
   Formatting Rules
   */
   "editor.formatOnSave": true,
@@ -17,7 +24,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python",
-    "editor.formatOnType": true
-  }
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+
+  "python.languageServer": "Pylance",
+  "python.formatting.provider": "none"
 }
