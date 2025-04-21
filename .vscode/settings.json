@@ -1,14 +1,8 @@
 {
-  /*
-  Git
-  */
   "git.enableSmartCommit": true,
   "git.autofetch": true,
   "git.confirmSync": false,
 
-  /*
-  Formatting Rules
-  */
   "editor.formatOnSave": true,
 
   "[html]": {
