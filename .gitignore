@@ -6,3 +6,11 @@
 # Ignore Windows temporary files
 Thumbs.db
 Desktop.ini
+
+#Python ignores
+.venv
+**/__pycache__
+**/*.pyc
+
+# Project ignores
+tmp

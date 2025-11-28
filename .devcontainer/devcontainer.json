@@ -7,12 +7,16 @@
   },
 
   "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "moby": false
+    }
   },
 
   // Use this environment variable if you need to bind mount your local source code into a new container.
   "remoteEnv": {
-    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "UV_LINK_MODE": "copy",
+    "UV_PYTHON_DOWNLOADS": "0"
   },
 
   "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
@@ -30,7 +34,8 @@
         "ms-python.black-formatter",
         "mhutchie.git-graph",
         "donjayamanne.githistory",
-        "ms-python.pylint"
+        "ms-python.pylint",
+        "ms-azuretools.vscode-containers"
       ]
     }
   }

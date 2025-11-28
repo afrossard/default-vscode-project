@@ -1,4 +1,8 @@
-FROM mcr.microsoft.com/devcontainers/python:3-bookworm
+
+#
+# Default python base
+#
+FROM mcr.microsoft.com/devcontainers/python:3-trixie
 
 # Install Homebrew
 USER vscode
@@ -22,7 +26,22 @@ EOF
 
 ENV PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:${PATH}"
 
-RUN brew install bash-completion@2 
+# -----------------------------------------------------------------------
+# Default tools useful in many projects
+# -----------------------------------------------------------------------
+
+RUN brew install bash-completion@2 dive
 
 RUN sudo apt-get update && sudo apt-get install --no-install-recommends --yes vim rsync 
 
+# Install UV
+COPY --from=ghcr.io/astral-sh/uv:0.9.12 /uv /uvx /bin/
+
+# -----------------------------------------------------------------------
+# ADD project packages here
+# -----------------------------------------------------------------------
+
+# RUN sudo apt-get update && sudo apt-get install --no-install-recommends --yes vim rsync
+
+#RUN brew install \
+#  gemini-cli
